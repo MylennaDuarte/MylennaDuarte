@@ -1,0 +1,222 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" width="960" height="420" role="img" aria-labelledby="titulo descricao">
+  <title id="titulo">Mylenna programando no quarto rosa</title>
+  <desc id="descricao">Desenho animado de Mylenna sentada à escrivaninha, digitando no notebook, num quarto todo rosa com prateleira de plantas, painel de indicadores na parede e corações flutuando.</desc>
+
+  <style>
+    /* Paleta: tudo em família rosa, com ameixa escuro no lugar do preto */
+    .parede   { fill: #ffd3e7 }
+    .listra   { fill: #ffffff; opacity: .16 }
+    .rodape   { fill: #f0a9cd }
+    .chao     { fill: #f3a4c9 }
+    .tapete   { fill: #ffc0dd; opacity: .55 }
+    .movel    { fill: #ef79b2 }
+    .movel-e  { fill: #d9589b }
+    .claro    { fill: #ff9ccb }
+    .papel    { fill: #fff2f8 }
+    .neon     { fill: #ff2d95 }
+    .tela     { fill: #4a1f3d }
+    .pele     { fill: #ffd7d2 }
+    .pele-s   { fill: #f7b9bd }
+    .blusa    { fill: #ff6fb0 }
+    .cabelo   { fill: #6b2d50 }
+    .cabelo-l { fill: #7a335a }
+
+    /* Respiração: o corpo sobe e desce de leve */
+    @keyframes respira { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(2.5px) } }
+    #pessoa { animation: respira 4.6s ease-in-out infinite }
+
+    /* Piscada: o olho achata por um instante */
+    @keyframes pisca { 0%, 92%, 100% { transform: scaleY(1) } 95% { transform: scaleY(.08) } }
+    .olho { transform-box: fill-box; transform-origin: center; animation: pisca 5.2s infinite }
+
+    /* Digitação: as mãos alternam */
+    @keyframes teclar { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-3px) } }
+    .mao-e { animation: teclar .44s ease-in-out infinite }
+    .mao-d { animation: teclar .44s ease-in-out .22s infinite }
+
+    /* Painel na parede: barras crescem e a linha se desenha */
+    @keyframes cresce { 0%, 100% { transform: scaleY(.5) } 50% { transform: scaleY(1) } }
+    .barra { transform-box: fill-box; transform-origin: bottom; animation: cresce 3.4s ease-in-out infinite }
+    @keyframes desenha { to { stroke-dashoffset: 0 } }
+    .linha { stroke-dasharray: 260; stroke-dashoffset: 260; animation: desenha 3.2s ease-in-out infinite alternate }
+    @keyframes pulso { 0%, 49% { opacity: 1 } 50%, 100% { opacity: .15 } }
+    .vivo { animation: pulso 1.1s step-end infinite }
+
+    /* Vapor da caneca */
+    @keyframes vapor { 0% { opacity: 0; transform: translateY(0) scale(.8) } 20% { opacity: .8 } 100% { opacity: 0; transform: translateY(-26px) scale(1.25) } }
+    .vapor { transform-box: fill-box; transform-origin: bottom; opacity: .35; animation: vapor 3s ease-out infinite }
+
+    /* Brilho da tela do notebook e da luminária */
+    @keyframes brilha { 0%, 100% { opacity: .12 } 50% { opacity: .22 } }
+    .brilho { animation: brilha 2.6s ease-in-out infinite }
+
+    /* Folhas balançando */
+    @keyframes balanca { 0%, 100% { transform: rotate(-3deg) } 50% { transform: rotate(3deg) } }
+    .folha { transform-box: fill-box; transform-origin: bottom center; animation: balanca 5s ease-in-out infinite }
+
+    /* Corações subindo */
+    @keyframes sobe { 0% { opacity: 0; transform: translateY(0) rotate(-6deg) } 15% { opacity: .85 } 100% { opacity: 0; transform: translateY(-130px) rotate(10deg) } }
+    .coracao { transform-box: fill-box; transform-origin: center; opacity: .85; animation: sobe 7s linear infinite }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important }
+      .linha { stroke-dashoffset: 0 }
+    }
+  </style>
+
+  <defs>
+    <path id="cor" d="M0 0c-2.2-3.2-8-3.6-8 1.2 0 3.4 4.4 6.2 8 9.4 3.6-3.2 8-6 8-9.4 0-4.8-5.8-4.4-8-1.2z"/>
+  </defs>
+
+  <!-- ===== Quarto ===== -->
+  <rect class="parede" width="960" height="352"/>
+  <g class="listra">
+    <rect x="30" width="18" height="352"/><rect x="150" width="18" height="352"/><rect x="270" width="18" height="352"/>
+    <rect x="390" width="18" height="352"/><rect x="510" width="18" height="352"/><rect x="630" width="18" height="352"/>
+    <rect x="750" width="18" height="352"/><rect x="870" width="18" height="352"/>
+  </g>
+  <rect class="rodape" y="338" width="960" height="14"/>
+  <rect class="chao" y="352" width="960" height="68"/>
+  <ellipse class="tapete" cx="480" cy="398" rx="300" ry="20"/>
+
+  <!-- ===== Parede: quadro com coração ===== -->
+  <rect class="papel" x="118" y="66" width="76" height="64" rx="8" stroke="#d9589b" stroke-width="3"/>
+  <g transform="translate(156 86) scale(1.9)"><use href="#cor" class="neon"/></g>
+
+  <!-- ===== Parede: prateleira com plantas e livros ===== -->
+  <rect class="movel-e" x="86" y="164" width="170" height="9" rx="4"/>
+  <rect class="movel-e" x="100" y="173" width="6" height="9" opacity=".8"/>
+  <rect class="movel-e" x="236" y="173" width="6" height="9" opacity=".8"/>
+  <g>
+    <g transform="rotate(-20 124 142)"><ellipse class="folha blusa" cx="124" cy="128" rx="7" ry="16"/></g>
+    <g transform="rotate(-44 116 142)"><ellipse class="folha claro" cx="116" cy="132" rx="6" ry="13" style="animation-delay:.6s"/></g>
+    <g transform="rotate(44 134 142)"><ellipse class="folha claro" cx="134" cy="132" rx="6" ry="13" style="animation-delay:1.2s"/></g>
+    <path class="movel-e" d="M108 164l4-24h24l4 24z"/>
+  </g>
+  <g>
+    <rect class="blusa" x="160" y="138" width="10" height="26" rx="2"/>
+    <rect class="movel-e" x="172" y="132" width="9" height="32" rx="2"/>
+    <rect class="claro" x="183" y="142" width="11" height="22" rx="2"/>
+  </g>
+  <g>
+    <g transform="rotate(-16 208 148)"><ellipse class="folha blusa" cx="208" cy="138" rx="6" ry="12" style="animation-delay:.9s"/></g>
+    <g transform="rotate(34 216 148)"><ellipse class="folha claro" cx="216" cy="140" rx="5" ry="10" style="animation-delay:1.6s"/></g>
+    <path class="movel-e" d="M198 164l3-18h20l3 18z"/>
+  </g>
+
+  <!-- ===== Parede: painel de indicadores ===== -->
+  <rect class="papel" x="686" y="60" width="196" height="142" rx="12" stroke="#d9589b" stroke-width="3"/>
+  <rect class="tela" x="698" y="72" width="172" height="118" rx="7"/>
+  <rect class="claro" x="710" y="84" width="56" height="7" rx="3.5" opacity=".7"/>
+  <circle class="neon vivo" cx="856" cy="88" r="4"/>
+  <g>
+    <rect class="barra claro" x="712" y="150" width="18" height="26" rx="3"/>
+    <rect class="barra claro" x="740" y="132" width="18" height="44" rx="3" style="animation-delay:.25s"/>
+    <rect class="barra claro" x="768" y="142" width="18" height="34" rx="3" style="animation-delay:.5s"/>
+    <rect class="barra claro" x="796" y="120" width="18" height="56" rx="3" style="animation-delay:.75s"/>
+    <rect class="barra claro" x="824" y="136" width="18" height="40" rx="3" style="animation-delay:1s"/>
+  </g>
+  <polyline class="linha" points="712,112 745,98 778,106 811,86 844,94" fill="none" stroke="#ff2d95" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- ===== Escrivaninha ===== -->
+  <ellipse cx="480" cy="414" rx="330" ry="9" fill="#a8356e" opacity=".18"/>
+  <rect class="movel-e" x="152" y="333" width="16" height="80" rx="5"/>
+  <rect class="movel-e" x="792" y="333" width="16" height="80" rx="5"/>
+  <rect class="movel-e" x="124" y="315" width="712" height="18" rx="5"/>
+  <rect class="movel" x="96" y="300" width="768" height="15" rx="7"/>
+  <rect class="claro" x="96" y="300" width="768" height="5" rx="2.5" opacity=".8"/>
+
+  <!-- ===== Cadeira ===== -->
+  <rect class="movel-e" x="384" y="222" width="192" height="80" rx="18"/>
+  <rect class="claro" x="396" y="232" width="168" height="60" rx="12" opacity=".5"/>
+
+  <!-- ===== Mylenna ===== -->
+  <g id="pessoa">
+    <!-- cabelo de trás, comprido -->
+    <path class="cabelo" d="M480 72c-58 0-76 40-76 84 0 54-18 102-28 136-4 12 6 18 18 14h172c12 4 22-2 18-14-10-34-28-82-28-136 0-44-18-84-76-84z"/>
+    <!-- cachos no contorno -->
+    <g class="cabelo-l">
+      <circle cx="410" cy="172" r="9"/><circle cx="404" cy="200" r="10"/><circle cx="402" cy="230" r="9"/>
+      <circle cx="396" cy="258" r="10"/><circle cx="404" cy="284" r="9"/>
+      <circle cx="550" cy="172" r="9"/><circle cx="556" cy="200" r="10"/><circle cx="558" cy="230" r="9"/>
+      <circle cx="564" cy="258" r="10"/><circle cx="556" cy="284" r="9"/>
+    </g>
+    <!-- rosto -->
+    <rect class="pele-s" x="464" y="166" width="32" height="42" rx="12"/>
+    <ellipse class="pele" cx="480" cy="132" rx="42" ry="46"/>
+    <!-- franja -->
+    <path class="cabelo" d="M436 122c0-34 88-34 88 0-12-12-24-4-34-8-10-6-20 2-30 0-10-2-18 2-24 8z"/>
+    <g class="cabelo">
+      <circle cx="450" cy="102" r="17"/><circle cx="480" cy="96" r="18"/><circle cx="510" cy="102" r="17"/>
+    </g>
+    <!-- sobrancelhas, olhos, blush e sorriso -->
+    <path d="M452 120c5-5 15-5 20-1" fill="none" stroke="#6b2d50" stroke-width="3" stroke-linecap="round"/>
+    <path d="M488 119c5-4 15-4 20 1" fill="none" stroke="#6b2d50" stroke-width="3" stroke-linecap="round"/>
+    <ellipse class="olho tela" cx="462" cy="136" rx="5.5" ry="6.5"/>
+    <ellipse class="olho tela" cx="498" cy="136" rx="5.5" ry="6.5"/>
+    <circle class="papel" cx="464" cy="133" r="2"/>
+    <circle class="papel" cx="500" cy="133" r="2"/>
+    <ellipse class="claro" cx="448" cy="152" rx="9" ry="5.5" opacity=".55"/>
+    <ellipse class="claro" cx="512" cy="152" rx="9" ry="5.5" opacity=".55"/>
+    <path d="M469 155c6 8 16 8 22 0" fill="none" stroke="#c7156f" stroke-width="3" stroke-linecap="round"/>
+    <!-- blusa rosa e braços -->
+    <path class="blusa" d="M396 300c0-46 18-78 48-88h72c30 10 48 42 48 88z"/>
+    <path class="pele-s" d="M462 214l18 22 18-22z"/>
+    <path d="M428 228c-24 18-36 42-38 60" fill="none" stroke="#ff6fb0" stroke-width="26" stroke-linecap="round"/>
+    <path d="M532 228c24 18 36 42 38 60" fill="none" stroke="#ff6fb0" stroke-width="26" stroke-linecap="round"/>
+    <!-- mãos digitando -->
+    <g class="mao-e">
+      <ellipse class="pele" cx="390" cy="292" rx="16" ry="11"/>
+      <path d="M382 294h16M384 299h12" fill="none" stroke="#f7b9bd" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <g class="mao-d">
+      <ellipse class="pele" cx="570" cy="292" rx="16" ry="11"/>
+      <path d="M562 294h16M564 299h12" fill="none" stroke="#f7b9bd" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- ===== Luz da tela, só o bastante para o notebook parecer ligado ===== -->
+  <ellipse class="papel brilho" cx="480" cy="272" rx="112" ry="44"/>
+
+  <!-- ===== Notebook ===== -->
+  <rect class="movel-e" x="404" y="290" width="152" height="10" rx="5"/>
+  <rect class="claro" x="404" y="290" width="152" height="4" rx="2" opacity=".7"/>
+  <rect class="movel" x="416" y="236" width="128" height="58" rx="8" stroke="#c7156f" stroke-width="3"/>
+  <rect class="claro" x="426" y="244" width="108" height="42" rx="6" opacity=".55"/>
+  <g transform="translate(480 258) scale(1.5)"><use href="#cor" class="papel"/></g>
+
+  <!-- ===== Objetos da mesa ===== -->
+  <g>
+    <rect class="papel" x="190" y="292" width="70" height="8" rx="3"/>
+    <rect class="papel" x="196" y="284" width="60" height="8" rx="3"/>
+    <g transform="rotate(-8 249 285)"><rect class="claro" x="236" y="272" width="26" height="26" rx="3"/></g>
+  </g>
+  <g>
+    <g transform="rotate(-18 306 300)"><ellipse class="folha blusa" cx="306" cy="266" rx="7" ry="15" style="animation-delay:.4s"/></g>
+    <g transform="rotate(26 318 300)"><ellipse class="folha claro" cx="318" cy="270" rx="6" ry="12" style="animation-delay:1.1s"/></g>
+    <path class="movel-e" d="M288 300l4-24h28l4 24z"/>
+  </g>
+  <g>
+    <path class="vapor" d="M610 268c-6-10 6-16 0-26" fill="none" stroke="#fff2f8" stroke-width="3.5" stroke-linecap="round"/>
+    <path class="vapor" d="M622 268c-6-12 6-18 0-28" fill="none" stroke="#fff2f8" stroke-width="3.5" stroke-linecap="round" style="animation-delay:.9s"/>
+    <path class="vapor" d="M633 270c-5-8 4-14 0-22" fill="none" stroke="#fff2f8" stroke-width="3" stroke-linecap="round" style="animation-delay:1.8s"/>
+    <path d="M642 280c12 0 12 14 0 14" fill="none" stroke="#d9589b" stroke-width="4"/>
+    <rect class="papel" x="600" y="272" width="40" height="28" rx="7" stroke="#d9589b" stroke-width="2.5"/>
+    <g transform="translate(620 278) scale(.8)"><use href="#cor" class="neon"/></g>
+  </g>
+  <g>
+    <path class="papel brilho" d="M722 240l22 4 56 56H666z"/>
+    <ellipse class="movel-e" cx="782" cy="298" rx="26" ry="7"/>
+    <path d="M782 296v-46" fill="none" stroke="#d9589b" stroke-width="6" stroke-linecap="round"/>
+    <path d="M782 250c0-20-22-28-42-26" fill="none" stroke="#d9589b" stroke-width="6" stroke-linecap="round"/>
+    <path class="blusa" d="M718 212l34 8-10 22-28-10z" stroke="#c7156f" stroke-width="2"/>
+  </g>
+
+  <!-- ===== Corações flutuando ===== -->
+  <g class="neon">
+    <g transform="translate(178 300) scale(1.3)"><use href="#cor" class="coracao"/></g>
+    <g transform="translate(316 296)"><use href="#cor" class="coracao" style="animation-delay:1.8s"/></g>
+    <g transform="translate(694 302) scale(1.2)"><use href="#cor" class="coracao" style="animation-delay:3.6s"/></g>
+    <g transform="translate(852 300)"><use href="#cor" class="coracao" style="animation-delay:5.4s"/></g>
+  </g>
+</svg>
