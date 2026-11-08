@@ -45,3 +45,11 @@ O repositório da captação de comprovantes é um estudo de caso, com dados fic
 ## Contato
 
 [Portfólio](https://mylennaduarte.github.io/) · [LinkedIn](https://www.linkedin.com/in/mylenna/) · [E-mail](mailto:mysilvaduarte@gmail.com)
+
+---
+
+<p align="center">
+  <img src="axolotl.svg" width="64" alt="Axolote rosa">
+  <br>
+  <sub>Tecnologia que transforma. Soluções que conectam. ♡</sub>
+</p>
